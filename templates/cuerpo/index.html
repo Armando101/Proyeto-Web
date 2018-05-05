@@ -1,0 +1,53 @@
+
+{% extends 'cuerpo/base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+    <main>
+		<center>
+			<div class="slider">
+				<ul class="slides">
+					<li>
+						<img src= "{% static 'cuerpo/img/slider1.jpeg' %}"> <!-- random image -->
+						<div class="caption center-align">
+						</div>
+					</li>
+					<li>
+						<img src=  "{% static 'cuerpo/img/slider2.jpeg' %}"> <!-- random image -->
+						<div class="caption left-align">
+						</div>
+					</li>
+					<li>
+						<img src="{% static 'cuerpo/img/slider3.jpeg' %}"> <!-- random image -->
+						<div class="caption right-align">
+						</div>
+					</li>
+					<li>
+						<img src= "{% static 'cuerpo/img/Slider4.jpeg' %}"> <!-- random image -->
+						<div class="caption center-align">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</center>
+		<br>
+		<div class="container">
+			<div class="row">
+				<div class="col m6">
+					<img src= "{% static 'cuerpo/img/Carta.png' %}" class="carta">
+				</div>
+				<div class="col m6">
+					<div class="carousel">
+						<a class="carousel-item" href="#"><img src= "{% static 'cuerpo/img/pu1.jpeg' %}" ></a>
+						<a class="carousel-item" href="#"><img src= "{% static 'cuerpo/img/pu2.jpeg' %}" ></a>
+						<a class="carousel-item" href="#"><img src= "{% static 'cuerpo/img/pu3.jpeg' %}" ></a>
+						<a class="carousel-item" href="#"><img src= "{% static 'cuerpo/img/pu4.jpeg' %}" ></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}
