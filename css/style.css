@@ -2,6 +2,10 @@
 	width: 30%;
 }
 
+.justificado{
+	text-align: center;
+}
+
 body {
 	display: flex;
 	min-height: 100vh;
