@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Style & Design</title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>Style & Design</title>
+  <link rel="icon"  href="img/Logo.jpg">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<nav>
+  <nav>
     <div class="nav-wrapper #f48fb1 pink lighten-3">
       <a href="index.html" class="brand-logo"><img src="img/Logo.jpg" class="logo"> </a>
       <a href="index.html" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Incio</a></li>
-        <li><a href="promociones.html">Promociones</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="Tips.html">Tips de Belleza</a></li>
+        <li><a href="opiniones.html">Opiniones</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
      </div>
     </nav>
   <ul class="sidenav #fce4ec pink lighten-5" id="mobile-demo">
     <li><a href="index.html">Incio</a></li>
-    <li><a href="promociones.html">Promociones</a></li>
     <li><a href="productos.html">Productos</a></li>
     <li><a href="Tips.html">Tips de Belleza</a></li>
+    <li><a href="opiniones.html">Opiniones</a></li>
     <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="login.html">Login</a></li>
   </ul>
 
 	<main>
 		<br><br>
 		<div class="row">
 			<form class="col s4 offset-s4">
-				<h3>Registrate!</h3>
+				<h3 class="head">Registrate!</h3>
 				<div class="input-field col s12 m12">
 					<input id="icon_prefix" type="text" class="validate">
 					<label for="icon_prefix">Usuario</label>
@@ -44,7 +47,7 @@
 					<label for="icon_prefix">Contraseña</label>
 				</div>	
 				<div class="col s6 offset-s4">
-					<button class="btn waves-effect waves-light black" type="submit" name="action">Continuar
+					<a class="waves-effect #d500f9 purple accent-3 btn-large" href="Registro.html">Continuar</a>
 					</button>
 				</div>
 				<div class="col s12">
@@ -52,8 +55,7 @@
 					<br><br>
 				</div>
 				<div class="col s6 offset-s4">
-					<button class="btn waves-effect waves-light black" type="submit" name="action">Inicia Sesion
-					</button>
+					<a class="waves-effect #d500f9 purple accent-3 btn-large">Iniciar_Sesion</a>
 				</div>
 			</form>
 		</div>
@@ -91,5 +93,5 @@
 </body>
 <script type="text/Javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/Javascript" src="js/app.js"></script>
+<script type="text/Javascript" src="js/add.js"></script>
 </html>
