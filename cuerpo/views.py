@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from django.contrib.auth import login, authenticate
 from django.contrib import messages
-from .models import Post, User
-from .forms import PostFormulario, SignUpForm
+from cuerpo.models import Post, User
+from cuerpo.forms import PostFormulario, SignUpForm, LoginForm
 
 # Create your views here. Ba
 
@@ -20,7 +19,20 @@ def contacto(request):
     return render(request, 'cuerpo/contacto.html', {})
 
 def login(request):
-    return render(request, 'cuerpo/login.html', {})
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = form.cleaned_data.get('username')
+            user.password = form.cleaned_data.get('password')
+            usuario = User.objects.get(username=user.username)
+            if(user.password != usuario.password1):
+                messages.info(request, 'Informacion erronea')
+            else:
+                return redirect('index')
+    else:
+        form = LoginForm()
+    return render(request, 'cuerpo/login.html', {'form': form})
 
 def registro(request):
     if request.method == 'POST':

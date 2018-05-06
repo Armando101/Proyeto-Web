@@ -6,20 +6,17 @@
 {% load staticfiles %}
 
     <main>
+    {% for message in messages %}
+    <h1>{{ message }}</h1>
+    {% endfor %}
 		<br><br>
 		<div class="row">
-			<form class="col s4 offset-s4">
-				<h3 class="head">Inicia Sesion</h3>
+            <h3 class="head">Inicia Sesion</h3>
+			<form class="col s4 offset-s4" method="POST">
 				<div class="input-field col s12 m12">
-					<input id="icon_prefix" type="text" class="validate">
-					<label for="icon_prefix">Usuario</label>
-				</div>
-				<div class="input-field col s12 m12">
-					<input id="icon_prefix" type="password" class="validate">
-					<label for="icon_prefix">Contraseña</label>
-				</div>
-				<div class="col s6 offset-s4">
-					<button class="btn waves-effect #d500f9 purple accent-3" type="submit" name="action">Iniciar Sesion
+					{% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn waves-effect purple accent-3" type="submit">Iniciar Sesion
 					</button>
 				</div>
 				<div class="col s12">
