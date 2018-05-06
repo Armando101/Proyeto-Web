@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
+from .models import Post, Usuario
 from .forms import PostFormulario, FormularioRegistroUno
 
 # Create your views here. Ba
@@ -20,16 +20,16 @@ def contacto(request):
 def login(request):
     return render(request, 'cuerpo/login.html', {})
 
-def registroinicial(request):
+def registro(request):
     if request.method == 'POST':
         form = FormularioRegistroUno(request.POST)
         if form.is_valid():
-        return render(request, 'cuerpo/registroinicial.html', {'form': form})
-    else
+            usuario = form.save(commit=False)
+            usuario.save()
+            return render(request, 'cuerpo/registro.html', {'form': form})
+    else:
         form = FormularioRegistroUno()
-
-def registroformal(request):
-    return render(request, 'cuerpo/registroformal.html', {})
+        return render(request, 'cuerpo/registro.html', {'form': form})
 
 def citas(request):
     return render(request, 'cuerpo/citas.html', {})

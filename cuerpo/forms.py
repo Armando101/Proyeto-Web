@@ -10,4 +10,4 @@ class PostFormulario(forms.ModelForm):
 class FormularioRegistroUno(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ('username', 'password',)
+        fields = ('username', 'password', 'nombre', 'apellidoM', 'apellidoP', 'numero', 'email')
