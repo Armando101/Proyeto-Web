@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Usuario
-from .forms import PostFormulario, FormularioRegistroUno
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from .models import Post, User
+from .forms import PostFormulario, SignUpForm
 
 # Create your views here. Ba
 
@@ -22,13 +24,19 @@ def login(request):
 
 def registro(request):
     if request.method == 'POST':
-        form = FormularioRegistroUno(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
-            usuario = form.save(commit=False)
-            usuario.save()
-            return redirect('index')
+            user = form.save(commit=False)
+            user.username = form.cleaned_data.get('username')
+            user.password1 = form.cleaned_data.get('password1')
+            user.password2 = form.cleaned_data.get('password2')
+            if(user.password1 != user.password2):
+                messages.info(request, 'Contraseñas no concuerdan.')
+            else:
+                user.save()
+                return redirect('index')
     else:
-        form = FormularioRegistroUno()
+        form = SignUpForm()
     return render(request, 'cuerpo/registro.html', {'form': form})
 
 def citas(request):

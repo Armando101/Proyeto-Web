@@ -1,13 +1,14 @@
 from django import forms
-from .models import Post, Usuario
+from .models import Post, User
 
 class PostFormulario(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('titulo', 'texto')
 
-
-class FormularioRegistroUno(forms.ModelForm):
+class SignUpForm(forms.ModelForm):
+    password1 = forms.CharField(max_length=30, help_text='Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(max_length=30, help_text='Confirmacion de contraseña', widget=forms.PasswordInput)
     class Meta:
-        model = Usuario
-        fields = ('username', 'password', 'nombre', 'apellidoM', 'apellidoP', 'numero', 'email')
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )

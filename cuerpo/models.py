@@ -30,19 +30,12 @@ class Post(models.Model):
         return self.titulo
 
 
-
-class Usuario(models.Model):
-    username = models.CharField(max_length=20, null=False, primary_key=True)
-    password = models.CharField(max_length=100, null=False)
-    nombre = models.CharField(max_length=30, null=False)
-    apellidoP = models.CharField(max_length=30, null=False)
-    apellidoM = models.CharField(max_length=30, null=False)
-    numero = models.PositiveIntegerField( null=False)
-    email = models.EmailField(null=False)
+class User(models.Model):
+    username = models.CharField(max_length=30, help_text='Nombre de usuario', primary_key=True)
+    first_name = models.CharField(max_length=30, help_text='Nombre')
+    last_name = models.CharField(max_length=30, help_text='Apellido')
+    email = models.EmailField(max_length=254, help_text='Correo electronico')
 
     def __str__(self):
         return self.username
-
-
-
 
