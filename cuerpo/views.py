@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect, render_to_response
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
-from .forms import PostFormulario
+from .forms import PostFormulario, FormularioRegistroUno
 
 # Create your views here. Ba
 
@@ -21,7 +21,12 @@ def login(request):
     return render(request, 'cuerpo/login.html', {})
 
 def registroinicial(request):
-    return render(request, 'cuerpo/registroinicial.html', {})
+    if request.method == 'POST':
+        form = FormularioRegistroUno(request.POST)
+        if form.is_valid():
+        return render(request, 'cuerpo/registroinicial.html', {'form': form})
+    else
+        form = FormularioRegistroUno()
 
 def registroformal(request):
     return render(request, 'cuerpo/registroformal.html', {})

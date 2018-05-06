@@ -3,35 +3,12 @@
 
 {% block content %}
 
-{% load staticfiles %}
-
     <main>
-		<br><br>
-		<div class="row">
-			<form class="col s4 offset-s4">
-				<h3>Registrate!</h3>
-				<div class="input-field col s12 m12">
-					<input id="icon_prefix" type="text" class="validate">
-					<label for="icon_prefix">Usuario</label>
-				</div>
-				<div class="input-field col s12 m12">
-					<input id="icon_prefix" type="password" class="validate">
-					<label for="icon_prefix">Contraseña</label>
-				</div>
-				<div class="col s6 offset-s4">
-					<button class="btn waves-effect waves-light black" type="submit" name="action">Continuar
-					</button>
-				</div>
-				<div class="col s12">
-					<br><br>
-					<br><br>
-				</div>
-				<div class="col s6 offset-s4">
-					<a class="btn waves-effect waves-light black" type="button" href="{% url 'login' %}" name="action">Inicia Sesion
-					</a>
-				</div>
-			</form>
-		</div>
+		<form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Guardar</button>
+        </form>
 	</main>
 
 {% endblock %}

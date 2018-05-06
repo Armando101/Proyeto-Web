@@ -29,6 +29,14 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo
 
+class Usuario(models.Model):
+    #userid = models.IntegerField()
+    username = models.CharField(max_length=20)
+    password = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.username
+
 
 
 
