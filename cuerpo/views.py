@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, render_to_response
 from django.utils import timezone
 from .models import Post
 from .forms import PostFormulario
@@ -6,10 +6,10 @@ from .forms import PostFormulario
 # Create your views here. Ba
 
 def index(request):
-    return render(request, 'cuerpo/index.html')
+    return render(request, 'cuerpo/index.html', {})
 
 def productos(request):
-    return render(request, 'cuerpo/productos.html')
+    return render(request, 'cuerpo/productos.html', {})
 
 def listadoPosts(request):
     posts = Post.objects.filter(fechaPublicacion__lte = timezone.now()).order_by('fechaPublicacion')
