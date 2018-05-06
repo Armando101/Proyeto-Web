@@ -1,15 +1,16 @@
+
 .logo {
 	width: 30%;
 }
 
 body {
 	display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 main {
-   	flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
 .fac {
@@ -23,4 +24,9 @@ main {
 
 .unfoot {
 	color: #EB2B62;
+}
+
+.head {
+	font-family: 'Black Han Sans', sans-serif;
+	color: #E34FE1;
 }
