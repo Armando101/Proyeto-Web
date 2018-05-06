@@ -6,6 +6,7 @@
 	text-align: center;
 }
 
+
 body {
 	display: flex;
 	min-height: 100vh;
@@ -32,4 +33,15 @@ main {
 .head {
 	font-family: 'Black Han Sans', sans-serif;
 	color: #E34FE1;
+}
+
+.especial2{
+	font-family: sans-serif;
+	color: #EF2593;	
+}
+.especial1{
+	font-family: sans-serif;
+    font-size: 200% cursive;
+    font-style: italic;
+    color: #FF33F0;
 }

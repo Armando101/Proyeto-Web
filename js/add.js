@@ -3,6 +3,7 @@ $(document).ready(function(){
  	$('.slider').slider();
  	$('.carousel').carousel();
     $('.parallax').parallax();
+    $('.scrollspy').scrollSpy();
  });
 
 function Ejecuta() {
