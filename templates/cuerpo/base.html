@@ -15,8 +15,8 @@
 			<a href="{% url 'index' %}" class="brand-logo"><img src= "{% static 'cuerpo/img/Logo.jpg' %}" class="logo"> </a>
 			<a href="{% url 'index' %}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="index.html">Incio</a></li>
-                <li><a href="productos.html">Productos</a></li>
+				<li><a href="{% url 'index' %}">Incio</a></li>
+                <li><a href="{% url 'productos' %}">Productos</a></li>
                 <li><a href="Tips.html">Tips de Belleza</a></li>
                 <li><a href="opiniones.html">Opiniones</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -25,11 +25,12 @@
 		</div>
 	</nav>
 	<ul class="sidenav #fce4ec pink lighten-5" id="mobile-demo">
-		<li><a href="index.html">Incio</a></li>
-        <li><a href="promociones.html">Promociones</a></li>
-        <li><a href="productos.html">Productos</a></li>
+		<li><a href="{% url 'index' %}">Incio</a></li>
+        <li><a href="{% url 'productos' %}">Productos</a></li>
         <li><a href="Tips.html">Tips de Belleza</a></li>
+        <li><a href="opiniones.html">Opiniones</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Login</a></li>
 	</ul>
 
 {% block content %}

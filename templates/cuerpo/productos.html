@@ -1,0 +1,39 @@
+{% extends 'cuerpo/base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+    <main>
+		<div class="container">
+		<center>
+			<h3>Elige la categoria que desees</h3>
+		</center>
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<img class="categorias" src= "{% static 'cuerpo/img/gaara2.jpg' %}">
+				</div>
+				<div class="input-field col s12 m6">
+					<img class="categorias" src="{% static 'cuerpo/img/gaara2.jpg' %}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<img class="categorias" src="{% static 'cuerpo/img/gaara2.jpg' %}">
+				</div>
+				<div class="input-field col s12 m6">
+					<img class="categorias" src="{% static 'cuerpo/img/gaara2.jpg' %}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<img class="categorias" src="{% static 'cuerpo/img/gaara2.jpg' %}">
+				</div>
+				<div class="input-field col s12 m6">
+					<img class="categorias" src="{% static 'cuerpo/img/gaara2.jpg' %}">
+				</div>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

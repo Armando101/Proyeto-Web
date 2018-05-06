@@ -8,6 +8,9 @@ from .forms import PostFormulario
 def index(request):
     return render(request, 'cuerpo/index.html')
 
+def productos(request):
+    return render(request, 'cuerpo/productos.html')
+
 def listadoPosts(request):
     posts = Post.objects.filter(fechaPublicacion__lte = timezone.now()).order_by('fechaPublicacion')
     return render(request,'cuerpo/listadoPosts.html',{'posts':posts})
