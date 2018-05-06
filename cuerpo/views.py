@@ -20,6 +20,12 @@ def contacto(request):
 def login(request):
     return render(request, 'cuerpo/login.html', {})
 
+def registroinicial(request):
+    return render(request, 'cuerpo/registroinicial.html', {})
+
+def registroformal(request):
+    return render(request, 'cuerpo/registroformal.html', {})
+
 def listadoPosts(request):
     posts = Post.objects.filter(fechaPublicacion__lte = timezone.now()).order_by('fechaPublicacion')
     return render(request,'cuerpo/listadoPosts.html',{'posts':posts})

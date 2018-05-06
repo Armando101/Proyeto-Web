@@ -1,0 +1,37 @@
+
+{% extends 'cuerpo/base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+    <main>
+		<br><br>
+		<div class="row">
+			<form class="col s4 offset-s4">
+				<h3>Registrate!</h3>
+				<div class="input-field col s12 m12">
+					<input id="icon_prefix" type="text" class="validate">
+					<label for="icon_prefix">Usuario</label>
+				</div>
+				<div class="input-field col s12 m12">
+					<input id="icon_prefix" type="password" class="validate">
+					<label for="icon_prefix">Contraseña</label>
+				</div>
+				<div class="col s6 offset-s4">
+					<button class="btn waves-effect waves-light black" type="submit" name="action">Continuar
+					</button>
+				</div>
+				<div class="col s12">
+					<br><br>
+					<br><br>
+				</div>
+				<div class="col s6 offset-s4">
+					<button class="btn waves-effect waves-light black" type="submit" name="action">Inicia Sesion
+					</button>
+				</div>
+			</form>
+		</div>
+	</main>
+
+{% endblock %}
