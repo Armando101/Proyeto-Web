@@ -26,10 +26,10 @@ def registro(request):
         if form.is_valid():
             usuario = form.save(commit=False)
             usuario.save()
-            return render(request, 'cuerpo/registro.html', {'form': form})
+            return redirect('index')
     else:
         form = FormularioRegistroUno()
-        return render(request, 'cuerpo/registro.html', {'form': form})
+    return render(request, 'cuerpo/registro.html', {'form': form})
 
 def citas(request):
     return render(request, 'cuerpo/citas.html', {})

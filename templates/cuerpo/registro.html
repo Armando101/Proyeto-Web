@@ -4,11 +4,15 @@
 {% block content %}
 
     <main>
-		<form method="POST" class="post-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">Continuar</button>
-        </form>
+        <div class="row">
+            <div class="col m5 offset-m4">
+                <form method="POST" class="post-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="save btn btn-default">Continuar</button>
+                </form>
+            </div>
+        </div>
 	</main>
 
 {% endblock %}

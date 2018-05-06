@@ -37,7 +37,7 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=30, null=False)
     apellidoP = models.CharField(max_length=30, null=False)
     apellidoM = models.CharField(max_length=30, null=False)
-    numero = models.IntegerField( null=False)
+    numero = models.PositiveIntegerField( null=False)
     email = models.EmailField(null=False)
 
     def __str__(self):
