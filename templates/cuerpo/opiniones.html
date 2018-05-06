@@ -1,0 +1,50 @@
+
+{% extends 'cuerpo/base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+    <main>
+        <div class="container">
+          <div class="row">
+            <div class="col m12">
+              <h2 class="head">
+                Tus opiniones son importantes para nosotros
+              </h2>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col m6">
+              <form>
+                <div class="row">
+                  <div class="input-field col m12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    <label for="icon_prefix2"> Mensaje</label>
+                  </div>
+                </div>
+              </form>
+              <form action="#">
+                <p>
+                  <label>
+                    <input type="checkbox" />
+                    <span>Acepto los terminos y condiciones</span>
+                  </label>
+                </p>
+              </form>
+              <center>
+                <button onclick="Ejecuta()">
+                  <a href="#" class="waves-effect #d500f9 purple accent-3 btn-large">Enviar</a>
+                </button>
+              </center>
+            </div>
+            <div class="col m6">
+                <h4 class="head"> Ve lo que dicen nuestros usuarios en FaceBook</h4>
+                <div class="fb-comments" data-href="https://armando101.github.io/Proyeto-Web/" data-numposts="25"></div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+{% endblock %}

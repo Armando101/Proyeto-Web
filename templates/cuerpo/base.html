@@ -18,9 +18,9 @@
 				<li><a href="{% url 'index' %}">Incio</a></li>
                 <li><a href="{% url 'productos' %}">Productos</a></li>
                 <li><a href="Tips.html">Tips de Belleza</a></li>
-                <li><a href="opiniones.html">Opiniones</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="{% url 'opiniones' %}">Opiniones</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -28,9 +28,9 @@
 		<li><a href="{% url 'index' %}">Incio</a></li>
         <li><a href="{% url 'productos' %}">Productos</a></li>
         <li><a href="Tips.html">Tips de Belleza</a></li>
-        <li><a href="opiniones.html">Opiniones</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="{% url 'opiniones' %}">Opiniones</a></li>
+        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
 	</ul>
 
 {% block content %}

@@ -11,6 +11,15 @@ def index(request):
 def productos(request):
     return render(request, 'cuerpo/productos.html', {})
 
+def opiniones(request):
+    return render(request, 'cuerpo/opiniones.html', {})
+
+def contacto(request):
+    return render(request, 'cuerpo/contacto.html', {})
+
+def login(request):
+    return render(request, 'cuerpo/login.html', {})
+
 def listadoPosts(request):
     posts = Post.objects.filter(fechaPublicacion__lte = timezone.now()).order_by('fechaPublicacion')
     return render(request,'cuerpo/listadoPosts.html',{'posts':posts})
