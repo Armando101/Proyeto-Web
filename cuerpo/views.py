@@ -26,6 +26,9 @@ def registroinicial(request):
 def registroformal(request):
     return render(request, 'cuerpo/registroformal.html', {})
 
+def citas(request):
+    return render(request, 'cuerpo/citas.html', {})
+
 def listadoPosts(request):
     posts = Post.objects.filter(fechaPublicacion__lte = timezone.now()).order_by('fechaPublicacion')
     return render(request,'cuerpo/listadoPosts.html',{'posts':posts})

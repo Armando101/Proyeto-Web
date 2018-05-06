@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="47f68ae0-5093-4b96-a6b5-480cd912f2ab" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cuerpo/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cuerpo/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cuerpo/registroinicial.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cuerpo/registroinicial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuerpo/static/cuerpo/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/cuerpo/static/cuerpo/js/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuerpo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuerpo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuerpo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuerpo/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +19,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/cuerpo/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="22" column="46" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="46" />
+            <state relative-caret-position="124">
+              <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -30,53 +31,17 @@
       <file leaf-file-name="registroinicial.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/cuerpo/registroinicial.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+            <state relative-caret-position="345">
+              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/cuerpo/login.html">
+      <file leaf-file-name="citas.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/cuerpo/citas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="29" column="128" selection-start-line="29" selection-start-column="128" selection-end-line="29" selection-end-column="128" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cuerpo/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cuerpo/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="e#0#84#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contacto.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/cuerpo/contacto.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-              <folding>
-                <element signature="e#2342#2358#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -97,19 +62,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ProyectoWeb/settings.py" />
-        <option value="$PROJECT_DIR$/cuerpo/static/cuerpo/js/add.js" />
         <option value="$PROJECT_DIR$/ProyectoWeb/urls.py" />
         <option value="$PROJECT_DIR$/templates/cuerpo/productos.html" />
         <option value="$PROJECT_DIR$/cuerpo/static/cuerpo/css/style.css" />
         <option value="$PROJECT_DIR$/templates/cuerpo/opiniones.html" />
         <option value="$PROJECT_DIR$/templates/cuerpo/index.html" />
         <option value="$PROJECT_DIR$/templates/cuerpo/contacto.html" />
-        <option value="$PROJECT_DIR$/templates/cuerpo/base.html" />
         <option value="$PROJECT_DIR$/templates/cuerpo/registroformal.html" />
-        <option value="$PROJECT_DIR$/cuerpo/urls.py" />
-        <option value="$PROJECT_DIR$/cuerpo/views.py" />
         <option value="$PROJECT_DIR$/templates/cuerpo/login.html" />
         <option value="$PROJECT_DIR$/templates/cuerpo/registroinicial.html" />
+        <option value="$PROJECT_DIR$/templates/cuerpo/base.html" />
+        <option value="$PROJECT_DIR$/cuerpo/urls.py" />
+        <option value="$PROJECT_DIR$/cuerpo/views.py" />
+        <option value="$PROJECT_DIR$/cuerpo/static/cuerpo/js/add.js" />
+        <option value="$PROJECT_DIR$/templates/cuerpo/citas.html" />
       </list>
     </option>
   </component>
@@ -174,6 +140,14 @@
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="cuerpo" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="cuerpo" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="cuerpo" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProyectoWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -420,13 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuerpo/static/cuerpo/js/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cuerpo/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -509,20 +476,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuerpo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cuerpo/registroformal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cuerpo/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuerpo/static/cuerpo/js/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuerpo/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="55" lean-forward="true" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuerpo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -536,37 +527,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuerpo/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/cuerpo/citas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="315">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/cuerpo/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="46" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="46" />
+        <state relative-caret-position="124">
+          <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cuerpo/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="29" column="128" selection-start-line="29" selection-start-column="128" selection-end-line="29" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cuerpo/registroinicial.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state relative-caret-position="345">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>

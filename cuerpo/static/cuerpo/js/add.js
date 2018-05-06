@@ -3,4 +3,7 @@ $(document).ready(function(){
  	$('.slider').slider();
  	$('.carousel').carousel();
  	$('.parallax').parallax();
+ 	$('.datepicker').datepicker();
+ 	$('.timepicker').timepicker();
+ 	$('.dropdown-trigger').dropdown();
  });
