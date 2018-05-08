@@ -32,6 +32,7 @@ main {
 .head {
 	font-family: 'Black Han Sans', sans-serif;
 	color: #E34FE1;
+<<<<<<< HEAD
 }
 
 .especial2{
@@ -53,4 +54,6 @@ main {
 	font-family: sans-serif;
 	color: #F17BC3;
 	text-align: left;	
+=======
+>>>>>>> eec33be3fa6dc8fc455aa8a83429246827ce947c
 }
