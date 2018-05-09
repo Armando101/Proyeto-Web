@@ -32,4 +32,28 @@ main {
 .head {
 	font-family: 'Black Han Sans', sans-serif;
 	color: #E34FE1;
+<<<<<<< HEAD
+}
+
+.especial2{
+	font-family: sans-serif;
+	color: #EF2593;	
+}
+.especial1{
+	font-family: sans-serif;
+    font-size: 300% cursive;
+    font-style: italic;
+    color: #FF33F0;
+}
+
+.especial3{
+	font-family: sans-serif;
+	color: #EF2593;	
+}
+.especial4{
+	font-family: sans-serif;
+	color: #F17BC3;
+	text-align: left;	
+=======
+>>>>>>> eec33be3fa6dc8fc455aa8a83429246827ce947c
 }
