@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from django.contrib import messages
+from django.contrib import messages, sessions
 from cuerpo.models import Post, User
-from cuerpo.forms import PostFormulario, SignUpForm, LoginForm
+from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm
 
 # Create your views here. Ba
 
@@ -17,6 +17,14 @@ def opiniones(request):
 
 def contacto(request):
     return render(request, 'cuerpo/contacto.html', {})
+
+def tips(request):
+    return render(request, 'cuerpo/tips.html', {})
+
+def cerrar(request):
+        request.session['USUARIO_LOGEADO'] = ""
+        messages.info(request, 'Se ha cerrado la sesion')
+        return redirect('login')
 
 def login(request):
     USUARIO_LOGEADO = request.session.get('USUARIO_LOGEADO')
@@ -35,7 +43,8 @@ def login(request):
                 messages.info(request, 'Informacion erronea')
             else:
                 request.session['USUARIO_LOGEADO'] = user.username
-                return redirect('index')
+                messages.info(request, 'Bienvenid@ ' + user.username)
+                return render(request, 'cuerpo/index.html', {})
     else:
         form = LoginForm()
     return render(request, 'cuerpo/login.html', {'form': form})
@@ -58,7 +67,19 @@ def registro(request):
     return render(request, 'cuerpo/registro.html', {'form': form})
 
 def citas(request):
-    return render(request, 'cuerpo/citas.html', {})
+    if request.method == 'POST':
+        form = CitasForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = form.cleaned_data.get('username')
+            if(user.password1 != user.password2):
+                messages.info(request, 'Contraseñas no concuerdan.')
+            else:
+                user.save()
+                return redirect('index')
+    else:
+        form = CitasForm()
+    return render(request, 'cuerpo/citas.html', {'form': form})
 
 def listadoPosts(request):
     posts = Post.objects.filter(fechaPublicacion__lte = timezone.now()).order_by('fechaPublicacion')

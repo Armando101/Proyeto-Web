@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib import messages, sessions
 
 # Create your models here. Va
 
@@ -48,3 +49,12 @@ class Logeado(models.Model):
 
     def __str__(self):
         return self.username
+
+class HacerCita(models.Model):
+    #username = request.session.get('USUARIO_LOGEADO')
+    username = models.CharField(max_length=30, help_text='Nombre de usuario')
+    hora = models.TimeField()
+    dia = models.DateField()
+    email = models.EmailField(help_text='Correo electronico')
+
+

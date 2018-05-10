@@ -8,30 +8,37 @@
     <link rel="stylesheet" href="{% static 'cuerpo/css/materialize.min.css' %}">
     <link rel="stylesheet" href="{% static 'cuerpo/css/style.css' %}">
     <link rel ="stylesheet" href="https://fonts.googleapis.com\icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 </head>
-<body>
+<body background="{% static 'cuerpo/img/fondo1.jpg' %}">
     <nav>
 		<div class="nav-wrapper #f48fb1 pink lighten-3">
 			<a href="{% url 'index' %}" class="brand-logo"><img src= "{% static 'cuerpo/img/Logo.jpg' %}" class="logo"> </a>
 			<a href="{% url 'index' %}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="{% url 'index' %}">Incio</a></li>
-                <li><a href="{% url 'productos' %}">Productos</a></li>
-                <li><a href="Tips.html">Tips de Belleza</a></li>
+                <li><a href="{% url 'citas' %}">Productos</a></li>
+                <li><a href="{% url 'tips' %}">Tips de Belleza</a></li>
                 <li><a href="{% url 'opiniones' %}">Opiniones</a></li>
                 <li><a href="{% url 'contacto' %}">Contacto</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'login' %}">Sesión</a></li>
 			</ul>
 		</div>
 	</nav>
 	<ul class="sidenav #fce4ec pink lighten-5" id="mobile-demo">
 		<li><a href="{% url 'index' %}">Incio</a></li>
         <li><a href="{% url 'productos' %}">Productos</a></li>
-        <li><a href="Tips.html">Tips de Belleza</a></li>
+        <li><a href="{% url 'tips' %}">Tips de Belleza</a></li>
         <li><a href="{% url 'opiniones' %}">Opiniones</a></li>
         <li><a href="{% url 'contacto' %}">Contacto</a></li>
-        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'login' %}">Sesión</a></li>
 	</ul>
+    {% for message in messages %}
+            <center>
+                <h1>{{ message }}</h1>
+            </center>
+    {% endfor %}
 
 {% block content %}
 
