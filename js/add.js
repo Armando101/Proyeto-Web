@@ -3,6 +3,9 @@ $(document).ready(function(){
  	$('.slider').slider();
  	$('.carousel').carousel();
     $('.parallax').parallax();
+    $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+	});
  });
 
 function Ejecuta() {

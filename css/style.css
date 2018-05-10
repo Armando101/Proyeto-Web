@@ -31,8 +31,7 @@ main {
 
 .head {
 	font-family: 'Black Han Sans', sans-serif;
-	color: #E34FE1;
-<<<<<<< HEAD
+	color: #000000;
 }
 
 .especial2{
@@ -54,6 +53,29 @@ main {
 	font-family: sans-serif;
 	color: #F17BC3;
 	text-align: left;	
-=======
->>>>>>> eec33be3fa6dc8fc455aa8a83429246827ce947c
+}
+
+.titulo {
+	font-family: 'Pacifico', cursive;
+	color:#FD8DFA;	
+}
+
+.subtitulo {
+	font-family: 'Pacifico', cursive;
+	color: #E34FE1;
+}
+
+.tipro {
+	font-family: 'Pacifico', cursive;
+	color:#5E005C;		
+}
+
+.ti {
+	font-family: 'Do Hyeon', sans-serif;
+	color: black;	
+}
+
+.trabajo {
+	
+    font-family: 'Crete Round', serif;
 }
