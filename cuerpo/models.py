@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from .choices import *
 from django.contrib import messages, sessions
 
 # Create your models here. Va
@@ -53,8 +54,6 @@ class Logeado(models.Model):
 class HacerCita(models.Model):
     #username = request.session.get('USUARIO_LOGEADO')
     username = models.CharField(max_length=30, help_text='Nombre de usuario')
-    hora = models.TimeField()
-    dia = models.DateField()
+    hora = models.TimeField(help_text="Formato hora:minutos")
+    dia = models.DateField(help_text="Formato mes/dia/año")
     email = models.EmailField(help_text='Correo electronico')
-
-

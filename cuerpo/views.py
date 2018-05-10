@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.mail import send_mail, EmailMessage
 from django.utils import timezone
 from django.contrib import messages, sessions
 from cuerpo.models import Post, User
@@ -20,6 +21,11 @@ def contacto(request):
 
 def tips(request):
     return render(request, 'cuerpo/tips.html', {})
+
+def recuperarContrasena(request):
+    email = EmailMessage('Recuperacion de contraseña', 'Contraseña: Hola', to=['patobarrero@gmail.com'])
+    email.send()
+    return redirect('login')
 
 def cerrar(request):
         request.session['USUARIO_LOGEADO'] = ""
@@ -72,6 +78,7 @@ def citas(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.username = form.cleaned_data.get('username')
+            servicio = form.cleaned_data.get('servicio')
             if(user.password1 != user.password2):
                 messages.info(request, 'Contraseñas no concuerdan.')
             else:
