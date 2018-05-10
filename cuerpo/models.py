@@ -51,9 +51,11 @@ class Logeado(models.Model):
     def __str__(self):
         return self.username
 
+#username = request.session.get('USUARIO_LOGEADO')
+
 class HacerCita(models.Model):
-    #username = request.session.get('USUARIO_LOGEADO')
     username = models.CharField(max_length=30, help_text='Nombre de usuario')
     hora = models.TimeField(help_text="Formato hora:minutos")
-    dia = models.DateField(help_text="Formato mes/dia/año")
+    dia = models.DateField(help_text="Formato dia/mes/año")
     email = models.EmailField(help_text='Correo electronico')
+    servicio = models.CharField(max_length=25, choices=SERVICES_CHOICES2, help_text='Eliga su servicio', default='1')

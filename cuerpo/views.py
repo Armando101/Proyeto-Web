@@ -77,8 +77,6 @@ def citas(request):
         form = CitasForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.username = form.cleaned_data.get('username')
-            servicio = form.cleaned_data.get('servicio')
             if(user.password1 != user.password2):
                 messages.info(request, 'Contraseñas no concuerdan.')
             else:

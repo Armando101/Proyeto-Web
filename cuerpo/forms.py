@@ -1,12 +1,5 @@
 from django import forms
 from .models import Post, User, Logeado, HacerCita
-from .choices import *
-
-SERVICES_CHOICES = (
-    ('1', 'Masaje'),
-    ('2', 'Facial'),
-    ('3', 'Uñas')
-)
 
 class PostFormulario(forms.ModelForm):
     class Meta:
@@ -43,9 +36,17 @@ class LoginForm(forms.ModelForm):
         }
 
 class CitasForm(forms.ModelForm):
-    #servicio = forms.MultipleChoiceField(required=False, widget=forms.CheckboxSelectMultiple, choices=SERVICES_CHOICES)
-    CHOICES = (('Option 1', 'Option 1'), ('Option 2', 'Option 2'),)
-    servicio = forms.ChoiceField(choices=CHOICES)
     class Meta:
         model = HacerCita
-        fields = ('username', 'dia', 'hora', 'email',)
+        fields = ['username', 'dia', 'hora', 'email', 'servicio']
+        labels = {
+            'username': "Nombre de usuario",
+            'dia': 'Dia',
+            'hora': 'Hora',
+            'email': 'Correo electronico',
+            'servicio': 'Serivico',
+        }
+        widgets = {
+            'dia': forms.SelectDateWidget,
+            'hora': forms.TimeInput,
+        }
