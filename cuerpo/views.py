@@ -19,6 +19,9 @@ def contacto(request):
     return render(request, 'cuerpo/contacto.html', {})
 
 def login(request):
+    USUARIO_LOGEADO = request.session.get('USUARIO_LOGEADO')
+    if not USUARIO_LOGEADO:
+        request.session['USUARIO_LOGEADO'] = ""
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -26,9 +29,12 @@ def login(request):
             user.username = form.cleaned_data.get('username')
             user.password = form.cleaned_data.get('password')
             usuario = User.objects.get(username=user.username)
-            if(user.password != usuario.password1):
+            if(USUARIO_LOGEADO != ""):
+                messages.info(request, 'Usuario ya esta logeado')
+            elif(user.password != usuario.password1):
                 messages.info(request, 'Informacion erronea')
             else:
+                request.session['USUARIO_LOGEADO'] = user.username
                 return redirect('index')
     else:
         form = LoginForm()
