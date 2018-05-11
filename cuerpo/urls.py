@@ -11,6 +11,7 @@ urlpatterns = [
     path('menuproductos/maquillaje/', views.maquillaje, name='maquillaje'),
     path('opiniones/', views.opiniones, name='opiniones'),
     path('contacto/', views.contacto, name='contacto'),
+    path('unete/', views.unete, name='unete'),
     path('login/', views.login, name='login'),
     path('citas/', views.citas, name='citas'),
     path('login/cerrar', views.cerrar, name='cerrar'),

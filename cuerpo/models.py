@@ -67,3 +67,11 @@ class Opiniones(models.Model):
     def __str__(self):
         return self.texto
 
+class Producto(models.Model):
+    id = models.AutoField
+    nombre = models.CharField(max_length=120)
+    precio = models.DecimalField(decimal_places=3, max_digits=10)
+
+    def __str__(self):
+        return self.nombre
+

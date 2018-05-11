@@ -23,17 +23,13 @@
             <div class="row">
                 <div class="col s12 m9 l12">
                     <div id="introduction" class="section scrollspy">
-                        <p>Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui atque vero quae
-                            consequatur, quia optio quasi ratione dolorum, alias, laborum deleniti unde eligendi dolore
-                            et possimus ipsam natus nulla enim! ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                            inventore praesentium voluptatum quia molestiae ipsum temporibus deserunt, odio suscipit
-                            minus consequatur laboriosam alias, iste harum repellat adipisci fuga! Sit, sint. ipsum
-                            dolor sit amet, consectetur adipisicing elit. Aliquam, maxime aut ullam. Reiciendis magnam,
-                            velit asperiores ab rerum fugiat deserunt nemo accusamus! Soluta possimus similique
-                            nesciunt? Aperiam quaerat, laboriosam ratione Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Eius, vitae. Quas exercitationem nihil possimus saepe, unde excepturi
-                            tenetur voluptatem. Quidem possimus consectetur quas sunt inventore similique eaque beatae
-                            praesentium, porro!.</p>
+                        <h5 class = "especial4">Maquillaje</h5>
+                        <p>Maquillaje de larga duración para una apariencia impecable por más de 12 horas, recomendado
+                            por maquillistas profesionales. Beneficios: proporciona un aspecto fresco y uniforme todo
+                            el día. Acabado natural, semi-mate. No cambia el color, aun en climas extremos. No contiene
+                            aceites. Absorbe y controla la grasa, sin resecar. Cubre arrugas, líneas de expresión e
+                            imperfecciones. Contiene protector solar.</p>
+                <p class = "especial2" >Ojos y pestañas</p>
                         <div class="divider"></div>
                         <div class="section">
                             <h5 class="especial2">Maquillaje</h5>
@@ -45,7 +41,7 @@
                                             <img class="activator" src="{% static 'cuerpo/img/delineador1.jpg' %}">
                                         </div>
                                         <div class="card-content">
-                                            <span class="card-title activator grey-text text-darken-4">Lápiz Delineador para Ojos Mary Kay®<br><i
+                                            <span class="card-title activator grey-text text-darken-4"> {% Productos.objects.get(id=1) %}   Lápiz Delineador para Ojos Mary Kay®<br><i
                                                     class="material-icons right">more_vert</i></span><br>
                                         </div>
                                         <div class="card-reveal">

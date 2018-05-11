@@ -29,6 +29,10 @@ def barnices(request):
 def maquillaje(request):
     return render(request, 'cuerpo/maquillaje.html', {})
 
+def unete(request):
+    return render(request, 'cuerpo/unete.html', {})
+
+
 def opiniones(request):
     if request.method == 'POST':
         form = OpinionForm(request.POST)
