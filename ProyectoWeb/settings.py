@@ -123,9 +123,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'style.design.g.36@gmail.com'
+EMAIL_HOST_USER = 'infinity.web.36@gmail.com'
 EMAIL_HOST_PASSWORD = 'ProyectoWeb36'
+
