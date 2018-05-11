@@ -18,7 +18,7 @@
 			<a href="{% url 'index' %}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="{% url 'index' %}">Incio</a></li>
-                <li><a href="{% url 'productos' %}">Productos</a></li>
+                <li><a href="{% url 'menuproductos' %}">Productos</a></li>
                 <li><a href="{% url 'citas' %}">Citas</a></li>
                 <li><a href="{% url 'tips' %}">Tips de Belleza</a></li>
                 <li><a href="{% url 'opiniones' %}">Opiniones</a></li>
@@ -29,7 +29,7 @@
 	</nav>
 	<ul class="sidenav #fce4ec pink lighten-5" id="mobile-demo">
 		<li><a href="{% url 'index' %}">Incio</a></li>
-        <li><a href="{% url 'productos' %}">Productos</a></li>
+        <li><a href="{% url 'menuproductos' %}">Productos</a></li>
         <li><a href="{% url 'citas' %}">Citas</a></li>
         <li><a href="{% url 'tips' %}">Tips de Belleza</a></li>
         <li><a href="{% url 'opiniones' %}">Opiniones</a></li>
@@ -79,7 +79,8 @@
 	</footer>
 
 </body>
-<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 <script type="text/javascript" src="{% static 'cuerpo/js/materialize.js' %}"></script>
 <script type="text/javascript" src="{% static 'cuerpo/js/add.js' %}"></script>
 </html>

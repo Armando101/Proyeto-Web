@@ -59,3 +59,11 @@ class HacerCita(models.Model):
     dia = models.DateField(help_text="Formato dia/mes/año")
     email = models.EmailField(help_text='Correo electronico')
     servicio = models.CharField(max_length=25, choices=SERVICES_CHOICES2, help_text='Eliga su servicio', default='1')
+
+class Opiniones(models.Model):
+    texto = models.CharField(max_length=300, default="")
+    terminos = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.texto
+

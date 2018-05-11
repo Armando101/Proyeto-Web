@@ -1,0 +1,134 @@
+{% extends 'cuerpo/base.html' %}
+
+{% block content %}
+
+    {% load staticfiles %}
+
+    <main>
+
+        <ul class="pagination">
+            <br>
+            <center>
+                <li class="disabled"><a href="{% url 'cabello' %}"><i class="material-icons">chevron_left</i></a></li>
+                <li class="waves-effect"><a href="{% url 'menuproductos' %}">Productos de Style & Design</a></li>
+                <li class="waves-effect"><a href="{% url 'maquillaje' %}">Maquillaje</a></li>
+                <li class="waves-effect"><a href="{% url 'barnices' %}">Barnices</a></li>
+                <li class="waves-effect"><a href="{% url 'cuidado' %}">Cuidado Personal</a></li>
+                <li class="waves-effect"><a href="{% url 'cabello' %}">Cuidado del Cabello</a></li>
+                <li class="active"><a href="{% url 'perfumes' %}">Perfumes y Lociones</a></li>
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </center>
+        </ul>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m9 l12">
+
+                    <div id="initialization" class="section scrollspy">
+                        <div class="divider"></div>
+                        <div class="section">
+                            <h5 class="especial2">Perfumes y lociones</h5>
+                            <div class="row">
+                                <div class="col s3">
+                                    <div class="card">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <img class="activator" src="{% static 'cuerpo/img/perfume1.jpg' %}">
+                                        </div>
+                                        <div class="card-content">
+                                            <span class="card-title activator grey-text text-darken-4">Bleu de Chanel Eau de Toilette Vaporizador®<i
+                                                    class="material-icons right">more_vert</i></span>
+                                        </div>
+                                        <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">¡El elogio a la libertad!
+                        <br>
+                        <br>
+                        <p>BLEU DE CHANEL es el perfume de un hombre que rechaza la uniformidad y que se aleja de todos los códigos. Su composición revela un espíritu masculino que decide su destino con independencia y determinación. Un carácter que se afirma allí donde uno no se lo espera.</p>
+                        <br>
+                        <div class="divider"></div> 
+                        <br>
+                        <p> 380 ml g </p>
+                        <p> $7799.00 </p>
+                        <i class="material-icons right">close</i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s3">
+                                    <div class="card">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <img class="activator" src="{% static 'cuerpo/img/perfume2.jpg' %}">
+                                        </div>
+                                        <div class="card-content">
+                                            <span class="card-title activator grey-text text-darken-4">Bleu de Chanel Loción para el afeitado®<br><i
+                                                    class="material-icons right">more_vert</i></span>
+                                        </div>
+                                        <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">¡Átmósfera masculina!
+                        <br>
+                        <br>
+                        <p>El encuentro entre la fuerza y la elegancia.
+                        Este aromático amaderado combina el frescor tónico de los cítricos y la fuerza de un acorde aromático con el soplo amaderado de notas de Cedro seco. La Madera de Sándalo de Nueva Caledonia le confiere una estela cálida y sensual.
+                        </p>
+                        <br>
+                        <div class="divider"></div> 
+                        <br>
+                        <p> 380 ml g </p>
+                        <p> $7799.00 </p>
+                        <i class="material-icons right">close</i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s3">
+                                    <div class="card">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <img class="activator" src="{% static 'cuerpo/img/perfume3.jpg' %}">
+                                        </div>
+                                        <div class="card-content">
+                                            <span class="card-title activator grey-text text-darken-4">Mademoidelle Eau de Parfum Vaporizador®<br><i
+                                                    class="material-icons right">more_vert</i></span>
+                                        </div>
+                                        <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">¡Mujer libre y audaz!
+                        <br>
+                        <br>
+                        <p> Una fragancia oriental femenina de carácter afirmado y un frescor asombroso.La esencia de una mujer libre y audaz.</p>
+                        <br>
+                        <div class="divider"></div> 
+                        <br>
+                        <p> 380 ml g </p>
+                        <p> $8899.00 </p>
+                        <i class="material-icons right">close</i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s3">
+                                    <div class="card">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <img class="activator" src="{% static 'cuerpo/img/perfume4.jpg' %}">
+                                        </div>
+                                        <div class="card-content">
+                                            <span class="card-title activator grey-text text-darken-4">Chance Eau Vive Eau De Toilette®<br><i
+                                                    class="material-icons right">more_vert</i></span>
+                                        </div>
+                                        <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">¡Perfume floral!
+                        <br>
+                        <br>
+                        <p>Una fragancia floral-energizante en un frasco redondo. Una ola de energía que le envuelve en un torbellino de felicidad. Un encuentro con la suerte rebosante de alegría.</p>
+                        <br>
+                        <div class="divider"></div> 
+                        <br>
+                        <p> 380 ml g </p>
+                        <p> $8899.00 </p>
+                        <i class="material-icons right">close</i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

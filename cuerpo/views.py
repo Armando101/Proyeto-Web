@@ -1,21 +1,44 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import EmailMessage
 from django.utils import timezone
 from datetime import time, datetime
 from django.contrib import messages, sessions
-from cuerpo.models import Post, User
-from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm
+from cuerpo.models import Post, User, Opiniones
+from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm, OpinionForm
 
 # Create your views here. Ba
 
 def index(request):
     return render(request, 'cuerpo/index.html', {})
 
-def productos(request):
-    return render(request, 'cuerpo/productos.html', {})
+def menuproductos(request):
+    return render(request, 'cuerpo/menuproductos.html', {})
+
+def cabello(request):
+    return render(request, 'cuerpo/cabello.html', {})
+
+def perfumes(request):
+    return render(request, 'cuerpo/perfumes.html', {})
+
+def cuidado(request):
+    return render(request, 'cuerpo/cuidado.html', {})
+
+def barnices(request):
+    return render(request, 'cuerpo/barnices.html', {})
+
+def maquillaje(request):
+    return render(request, 'cuerpo/maquillaje.html', {})
 
 def opiniones(request):
-    return render(request, 'cuerpo/opiniones.html', {})
+    if request.method == 'POST':
+        form = OpinionForm(request.POST)
+        if form.is_valid():
+            opinion = form.save(commit=False)
+            opinion.save()
+            return redirect('opiniones')
+    else:
+        form = OpinionForm()
+    return render(request, 'cuerpo/opiniones.html', {'form' : form})
 
 def contacto(request):
     return render(request, 'cuerpo/contacto.html', {})

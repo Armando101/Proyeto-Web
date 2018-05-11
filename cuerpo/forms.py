@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, User, Logeado, HacerCita
+from .models import Post, User, Logeado, HacerCita, Opiniones
 
 class PostFormulario(forms.ModelForm):
     class Meta:
@@ -47,4 +47,17 @@ class CitasForm(forms.ModelForm):
         widgets = {
             'dia': forms.SelectDateWidget,
             'hora': forms.TimeInput,
+        }
+
+class OpinionForm(forms.ModelForm):
+    class Meta:
+        model = Opiniones
+        fields = ['texto', 'terminos']
+        labels = {
+            'texto': 'Escribe tu opinion',
+            'terminos': 'Acepto terminos y condiciones',
+        }
+        widgets = {
+            'texto': forms.Textarea,
+            'terminos': forms.CheckboxInput()
         }
