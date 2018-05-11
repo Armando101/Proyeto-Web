@@ -3,7 +3,7 @@ from django.core.mail import EmailMessage
 from django.utils import timezone
 from datetime import time, datetime
 from django.contrib import messages, sessions
-from cuerpo.models import Post, User, Opiniones
+from cuerpo.models import Post, User, Opiniones, Producto, Barnice, CuidadoCabello, CuidadoPersonal, PerfumesLociones
 from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm, OpinionForm
 
 # Create your views here. Ba
@@ -15,19 +15,24 @@ def menuproductos(request):
     return render(request, 'cuerpo/menuproductos.html', {})
 
 def cabello(request):
-    return render(request, 'cuerpo/cabello.html', {})
+    cuidadocabellos = CuidadoCabello.objects.all()
+    return render(request, 'cuerpo/cabello.html', {'cuidadocabellos' : cuidadocabellos})
 
 def perfumes(request):
-    return render(request, 'cuerpo/perfumes.html', {})
+    perfumeslocioness = PerfumesLociones.objects.all()
+    return render(request, 'cuerpo/perfumes.html', {'perfumeslocioness' : perfumeslocioness})
 
 def cuidado(request):
-    return render(request, 'cuerpo/cuidado.html', {})
+    cuidadopersonals = CuidadoPersonal.objects.all()
+    return render(request, 'cuerpo/cuidado.html', {'cuidadopersonals' : cuidadopersonals})
 
 def barnices(request):
-    return render(request, 'cuerpo/barnices.html', {})
+    barnices = Barnice.objects.all()
+    return render(request, 'cuerpo/barnices.html', {'barnices' : barnices})
 
 def maquillaje(request):
-    return render(request, 'cuerpo/maquillaje.html', {})
+    productos = Producto.objects.all()
+    return render(request, 'cuerpo/maquillaje.html', {'productos' : productos})
 
 def unete(request):
     return render(request, 'cuerpo/unete.html', {})

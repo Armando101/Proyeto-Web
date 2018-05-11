@@ -71,6 +71,53 @@ class Producto(models.Model):
     id = models.AutoField
     nombre = models.CharField(max_length=120)
     precio = models.DecimalField(decimal_places=3, max_digits=10)
+    descricpion = models.CharField(max_length=300, default="")
+    imagen = models.CharField(max_length=120)
+    nota = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.nombre
+
+class Barnice(models.Model):
+    id = models.AutoField
+    nombre = models.CharField(max_length=120)
+    precio = models.DecimalField(decimal_places=3, max_digits=10)
+    descricpion = models.CharField(max_length=300, default="")
+    imagen = models.CharField(max_length=120)
+    nota = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.nombre
+
+class CuidadoPersonal(models.Model):
+    id = models.AutoField
+    nombre = models.CharField(max_length=120)
+    precio = models.DecimalField(decimal_places=3, max_digits=10)
+    descricpion = models.CharField(max_length=300, default="")
+    imagen = models.CharField(max_length=120)
+    nota = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.nombre
+
+class CuidadoCabello(models.Model):
+    id = models.AutoField
+    nombre = models.CharField(max_length=120)
+    precio = models.DecimalField(decimal_places=3, max_digits=10)
+    descricpion = models.CharField(max_length=300, default="")
+    imagen = models.CharField(max_length=120)
+    nota = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.nombre
+
+class PerfumesLociones(models.Model):
+    id = models.AutoField
+    nombre = models.CharField(max_length=120)
+    precio = models.DecimalField(decimal_places=3, max_digits=10)
+    descricpion = models.CharField(max_length=300, default="")
+    imagen = models.CharField(max_length=120)
+    nota = models.CharField(max_length=120)
 
     def __str__(self):
         return self.nombre

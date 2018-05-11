@@ -23,113 +23,55 @@
             <div class="row">
                 <div class="col s12 m9 l12">
                     <div id="initialization" class="section scrollspy">
-                        <h5 class = "especial2">Cuidado del cabello</h5>
-              <p >El cabello es una extensión viva de nosotros, que tiene sus raíces en la sangre y se nutre del
-                  sistema digestivo. Nuestro cabello está íntimamente relacionado con el sistema nervioso y está
-                  constituido principalmente por tejido muscular, queratina, aceites, proteínas y silicio. Aunque casi
-                  siempre queremos que esté saludable por belleza, el cabello tiene una función biológica que  hace que
-                  el cuerpo “sienta” y se estabilice magnéticamente.</p><br>
-              <p>Para tener un cabello perfecto es necesario brindarle constantemente diferentes cuidados, ya que por
-                  desgracia nuestro cabello está expuesto a muchos factores que lo puede debilitar y lo pueden dañar.
-                  Por suerte, existen muchas formas naturales y fáciles de cuidar la salud de nuestro cabello, para que
-                  luzca siempre hermoso, suave y con un brillo espectacular. ¿Quieres aprender a cuidar tu cabello?</p>
+                        <h5 class="especial2">Cuidado del cabello</h5>
+                        <p>El cabello es una extensión viva de nosotros, que tiene sus raíces en la sangre y se nutre
+                            del
+                            sistema digestivo. Nuestro cabello está íntimamente relacionado con el sistema nervioso y
+                            está
+                            constituido principalmente por tejido muscular, queratina, aceites, proteínas y silicio.
+                            Aunque casi
+                            siempre queremos que esté saludable por belleza, el cabello tiene una función biológica que
+                            hace que
+                            el cuerpo “sienta” y se estabilice magnéticamente.</p><br>
+                        <p>Para tener un cabello perfecto es necesario brindarle constantemente diferentes cuidados, ya
+                            que por
+                            desgracia nuestro cabello está expuesto a muchos factores que lo puede debilitar y lo pueden
+                            dañar.
+                            Por suerte, existen muchas formas naturales y fáciles de cuidar la salud de nuestro cabello,
+                            para que
+                            luzca siempre hermoso, suave y con un brillo espectacular. ¿Quieres aprender a cuidar tu
+                            cabello?</p>
                         <div class="divider"></div>
                         <div class="section">
                             <h5 class="especial2">Cuidado del cabello</h5>
                             <p>Stuff</p>
                             <div class="row">
-                                <div class="col s3">
-                                    <div class="card">
-                                        <div class="card-image waves-effect waves-block waves-light">
-                                            <img class="activator" src="{% static 'cuerpo/img/cabello1.jpg' %}">
-                                        </div>
-                                        <div class="card-content">
-                                            <span class="card-title activator grey-text text-darken-4">Ekos-Shampoo-Murumuru Natura®<br><br>  601<i
-                                                    class="material-icons right">more_vert</i></span>
-                                        </div>
-                                        <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">¡Escudo protector!
+                                {% for cuidadcabello in cuidadocabellos %}
+                                    <div class="col s3">
+                                        <div class="card">
+                                            <div class="card-image waves-effect waves-block waves-light">
+                                                <img class="activator" src="{{ cuidadcabello.imagen }}">
+                                            </div>
+                                            <div class="card-content">
+
+                                            <span class="card-title activator grey-text text-darken-4">{{ cuidadcabello.nombre }}<br><i
+                                                    class="material-icons right">more_vert</i></span><br>
+
+                                            </div>
+                                            <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ cuidadcabello.nota }}
                         <br>
                         <br>
-                        <p>Tu cabello nuevo y reconstruido desde la primera aplicación.</p>
+                        <p>{{ cuidadcabello.descricpion }}</p>
                         <br>
-                        <div class="divider"></div> 
+                        <div class="divider"></div>
                         <br>
-                        <p> 300 ml </p>
-                        <p> $250.00 </p>
+                        <p> ${{ cuidadcabello.precio }}</p>
                         <i class="material-icons right">close</i></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col s3">
-                                    <div class="card">
-                                        <div class="card-image waves-effect waves-block waves-light">
-                                            <img class="activator" src="{% static 'cuerpo/img/cabello2.jpg' %}">
-                                        </div>
-                                        <div class="card-content">
-                                            <span class="card-title activator grey-text text-darken-4">Ekos-Crema para peinar Natura®<br><br>  606<i
-                                                    class="material-icons right">more_vert</i></span>
-                                        </div>
-                                        <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">¡Disminuye el Frizz!
-                        <br>
-                        <br>
-                        <p>Reduce el quiebre del cabello y repara las puntas abiertas. 75% puntas reparadas.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 150 ml </p>
-                        <p> $180.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col s3">
-                                    <div class="card">
-                                        <div class="card-image waves-effect waves-block waves-light">
-                                            <img class="activator" src="{% static 'cuerpo/img/cabello3.jpg' %}">
-                                        </div>
-                                        <div class="card-content">
-                                            <span class="card-title activator grey-text text-darken-4">Plant-Perfume para cabello Natura®<br><br>  616<i
-                                                    class="material-icons right">more_vert</i></span>
-                                        </div>
-                                        <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">¡De bolsillo!
-                        <br>
-                        <br>
-                        <p>Ideal para llevar en tu bolsa y mantener tu cabello perfumado en cualquier momento del día..</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 30 ml </p>
-                        <p> $75.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col s3">
-                                    <div class="card">
-                                        <div class="card-image waves-effect waves-block waves-light">
-                                            <img class="activator" src="{% static 'cuerpo/img/cabello4.jpg' %}">
-                                        </div>
-                                        <div class="card-content">
-                                            <span class="card-title activator grey-text text-darken-4">Plant-aceite de tratamiento capilar Natura®<br><br>  613<i
-                                                    class="material-icons right">more_vert</i></span>
-                                        </div>
-                                        <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">¡Nutrición y brillo!
-                        <br>
-                        <br>
-                        <p>Con complejo de 3 aceites nutritivos, restaura profundamente la fibra capilar devolviendo el brillo al cabello.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 100 ml </p>
-                        <p> $145.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

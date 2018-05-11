@@ -8,7 +8,8 @@
         <ul class="pagination">
             <br>
             <center>
-                <li class="disabled"><a href="{% url 'maquillaje' %}"><i class="material-icons">chevron_left</i></a></li>
+                <li class="disabled"><a href="{% url 'maquillaje' %}"><i class="material-icons">chevron_left</i></a>
+                </li>
                 <li class="waves-effect"><a href="{% url 'menuproductos' %}">Productos de Style & Design</a></li>
                 <li class="waves-effect"><a href="{% url 'maquillaje' %}">Maquillaje</a></li>
                 <li class="active"><a href="{% url 'barnices' %}">Barnices</a></li>
@@ -20,209 +21,82 @@
         </ul>
         <div class="container">
             <div id="structure" class="section scrollspy">
-                <center><h5 class = "especial4">Barnices</h5></center>
-              <p class="flow-text">El Esmalte de Uñas siempre dará un toque de glamour, delicadeza y sensualidad a
-                  nuestras manos. Por ello, nuestras colecciones de esmaltes tienen tonos vivos y de gran colorido que
-                  se pueden combinar con tonos de maquillaje monocromáticos para resaltar la fuerza y sencillez de tu
-                  personalidad.</p>
+                <center><h5 class="especial4">Barnices</h5></center>
+                <p class="flow-text">El Esmalte de Uñas siempre dará un toque de glamour, delicadeza y sensualidad a
+                    nuestras manos. Por ello, nuestras colecciones de esmaltes tienen tonos vivos y de gran colorido que
+                    se pueden combinar con tonos de maquillaje monocromáticos para resaltar la fuerza y sencillez de tu
+                    personalidad.</p>
                 <div class="divider"></div>
                 <div class="section">
                     <h5 class="especial2">Barnices</h5>
                     <p>Flora mini</p>
                     <div class="row">
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte1.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Gladiola Roja Bissú®<br>  213<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Luminosos Colores
+                        {% for barnice in barnices %}
+                            {% if barnice.id < 6 %}
+                                <div class="col s3">
+                                    <div class="card">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <img class="activator" src="{{ barnice.imagen }}">
+                                        </div>
+                                        <div class="card-content">
+
+                                            <span class="card-title activator grey-text text-darken-4">{{ barnice.nombre }}<br><i
+                                                    class="material-icons right">more_vert</i></span><br>
+
+                                        </div>
+                                        <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ barnice.nota }}
                         <br>
                         <br>
-                        <p>Colección Floral para la temporada Primavera-Verano 2018.</p>
+                        <p>{{ barnice.descricpion }}</p>
                         <br>
-                        <div class="divider"></div> 
+                        <div class="divider"></div>
                         <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
+                        <p> ${{ barnice.precio }}</p>
                         <i class="material-icons right">close</i></span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte2.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Azul Quemado Bissú®<br>  226<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Luminosos Colores
-                        <br>
-                        <br>
-                        <p>Colección Floral para la temporada Primavera-Verano 2018.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte3.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Jacaranda Bissú®<br>  203<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Luminosos Colores
-                        <br>
-                        <br>
-                        <p>Colección Floral para la temporada Primavera-Verano 2018.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte4.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Marillo Tulipán Bissú®<br>  236<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Luminosos Colores
-                        <br>
-                        <br>
-                        <p>Colección Floral para la temporada Primavera-Verano 2018.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-
             <div id="structure" class="section scrollspy">
                 <div class="divider"></div>
                 <div class="section">
                     <p>Escarcha mini</p>
                     <div class="row">
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte5.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Luna Blanca Bissú®<br><br>  301<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Destellos de luz
+                        {% for barnice in barnices %}
+                            {% if barnice.id > 5 %}
+                                {% if barnice.id < 10 %}
+                                    <div class="col s3">
+                                        <div class="card">
+                                            <div class="card-image waves-effect waves-block waves-light">
+                                                <img class="activator" src="{{ barnice.imagen }}">
+                                            </div>
+                                            <div class="card-content">
+
+                                            <span class="card-title activator grey-text text-darken-4">{{ barnice.nombre }}<br><i
+                                                    class="material-icons right">more_vert</i></span><br>
+
+                                            </div>
+                                            <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ barnice.nota }}
                         <br>
                         <br>
-                        <p>Esmalte con glitter y figuras en colores destellantes que harán resaltar tus manos.</p>
+                        <p>{{ barnice.descricpion }}</p>
                         <br>
-                        <div class="divider"></div> 
+                        <div class="divider"></div>
                         <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
+                        <p> ${{ barnice.precio }}</p>
                         <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte6.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Añoz Luz Bissú®<br><br><br>  306<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Destellos de luz
-                        <br>
-                        <br>
-                        <p>Esmalte con glitter y figuras en colores destellantes que harán resaltar tus manos.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte7.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Interestelar Bissú®<br><br>  307<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Destellos de luz
-                        <br>
-                        <br>
-                        <p>Esmalte con glitter y figuras en colores destellantes que harán resaltar tus manos.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte8.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Conféti Azul Bissú®<br><br>  314<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Destellos de luz
-                        <br>
-                        <br>
-                        <p>Esmalte con glitter y figuras en colores destellantes que harán resaltar tus manos.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -231,98 +105,36 @@
                 <div class="section">
                     <p>Fruits mini</p>
                     <div class="row">
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte9.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Sandía Roja Bissú®<br><br>  427<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Inspiración Frutal
+                        {% for barnice in barnices %}
+                            {% if barnice.id > 9 %}
+                                {% if barnice.id < 14 %}
+                                    <div class="col s3">
+                                        <div class="card">
+                                            <div class="card-image waves-effect waves-block waves-light">
+                                                <img class="activator" src="{{ barnice.imagen }}">
+                                            </div>
+                                            <div class="card-content">
+
+                                            <span class="card-title activator grey-text text-darken-4">{{ barnice.nombre }}<br><i
+                                                    class="material-icons right">more_vert</i></span><br>
+
+                                            </div>
+                                            <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ barnice.nota }}
                         <br>
                         <br>
-                        <p>Destellantes esmaltes de inspiración frutal, terminado semi translúcidos en tonos fríos y cálidos con destellos únicos y diferentes.</p>
+                        <p>{{ barnice.descricpion }}</p>
                         <br>
-                        <div class="divider"></div> 
+                        <div class="divider"></div>
                         <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
+                        <p> ${{ barnice.precio }}</p>
                         <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte10.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Piña Amarilla Bissú®<br><br>  427<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Inspiración Frutal
-                        <br>
-                        <br>
-                        <p>Destellantes esmaltes de inspiración frutal, terminado semi translúcidos en tonos fríos y cálidos con destellos únicos y diferentes.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte11.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Menta Azul Bissú®<br><br>  427<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Inspiración Frutal
-                        <br>
-                        <br>
-                        <p>Destellantes esmaltes de inspiración frutal, terminado semi translúcidos en tonos fríos y cálidos con destellos únicos y diferentes.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'cuerpo/img/esmalte12.jpg' %}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Uva Morada Bissú®<br><br>  427<i
-                                            class="material-icons right">more_vert</i></span>
-                                </div>
-                                <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Inspiración Frutal
-                        <br>
-                        <br>
-                        <p>Destellantes esmaltes de inspiración frutal, terminado semi translúcidos en tonos fríos y cálidos con destellos únicos y diferentes.</p>
-                        <br>
-                        <div class="divider"></div> 
-                        <br>
-                        <p> 15 ml </p>
-                        <p> $15.00 </p>
-                        <i class="material-icons right">close</i></span>
-                                </div>
-                            </div>
-                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
