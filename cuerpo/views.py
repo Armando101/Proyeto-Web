@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import send_mail, EmailMessage
 from django.utils import timezone
+from datetime import time, datetime
 from django.contrib import messages, sessions
 from cuerpo.models import Post, User
 from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm
@@ -42,15 +43,19 @@ def login(request):
             user = form.save(commit=False)
             user.username = form.cleaned_data.get('username')
             user.password = form.cleaned_data.get('password')
-            usuario = User.objects.get(username=user.username)
-            if(USUARIO_LOGEADO != ""):
-                messages.info(request, 'Usuario ya esta logeado')
-            elif(user.password != usuario.password1):
-                messages.info(request, 'Informacion erronea')
-            else:
-                request.session['USUARIO_LOGEADO'] = user.username
-                messages.info(request, 'Bienvenid@ ' + user.username)
-                return render(request, 'cuerpo/index.html', {})
+            try:
+                usuario = User.objects.get(username=user.username)
+                if (USUARIO_LOGEADO != ""):
+                    messages.info(request, 'Usuario ya esta logeado')
+                elif (user.password != usuario.password1):
+                    messages.info(request, 'Informacion erronea')
+                else:
+                    request.session['USUARIO_LOGEADO'] = user.username
+                    messages.info(request, 'Bienvenid@ ' + user.username)
+                    return render(request, 'cuerpo/index.html', {})
+            except User.DoesNotExist:
+                messages.info(request, 'Infromación errónea')
+                redirect('login')
     else:
         form = LoginForm()
     return render(request, 'cuerpo/login.html', {'form': form})
@@ -73,15 +78,28 @@ def registro(request):
     return render(request, 'cuerpo/registro.html', {'form': form})
 
 def citas(request):
+    usuario = request.session['USUARIO_LOGEADO']
+    if not usuario or usuario == "":
+        messages.info(request, 'Inicia sesión')
+        redirect('login')
     if request.method == 'POST':
         form = CitasForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            if(user.password1 != user.password2):
-                messages.info(request, 'Contraseñas no concuerdan.')
-            else:
-                user.save()
-                return redirect('index')
+            try:
+                user = User.objects.get(username=usuario)
+                instance = form.save()
+                instance.username = user.username
+                instance.email = user.email
+                if(instance.hora > time(19,00)):
+                    messages.info(request, 'Información errónea')
+                elif(instance.hora < time(9,00)):
+                    messages.info(request, 'Información errónea')
+                else:
+                    instance.save()
+                    messages.info(request, usuario + " ya se agendó tu cita")
+                    return render(request, 'cuerpo/index.html', {})
+            except User.DoesNotExist:
+                messages.info(request, 'Información errónea')
     else:
         form = CitasForm()
     return render(request, 'cuerpo/citas.html', {'form': form})

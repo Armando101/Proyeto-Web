@@ -38,12 +38,10 @@ class LoginForm(forms.ModelForm):
 class CitasForm(forms.ModelForm):
     class Meta:
         model = HacerCita
-        fields = ['username', 'dia', 'hora', 'email', 'servicio']
+        fields = ['dia', 'hora', 'servicio']
         labels = {
-            'username': "Nombre de usuario",
             'dia': 'Dia',
             'hora': 'Hora',
-            'email': 'Correo electronico',
             'servicio': 'Serivico',
         }
         widgets = {
