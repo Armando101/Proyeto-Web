@@ -95,3 +95,13 @@ main {
 	width: 500px;
 	height: 350px;
 }
+
+.subtitulos {
+
+
+    font-family: 'Great Vibes', cursive;
+	color: #E01591;
+	text-align: left;
+	font-size: font-size: 20px;
+
+}
