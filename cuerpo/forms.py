@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, User, Logeado, HacerCita, Opiniones
+from .models import Post, User, Logeado, HacerCita, Opiniones, Recuperacion
 
 class PostFormulario(forms.ModelForm):
     class Meta:
@@ -60,4 +60,12 @@ class OpinionForm(forms.ModelForm):
         widgets = {
             'texto': forms.Textarea,
             'terminos': forms.CheckboxInput()
+        }
+
+class RecuperarForm(forms.ModelForm):
+    class Meta:
+        model = Recuperacion
+        fields = ['email']
+        labels = {
+            'email' : 'Escribe tu correo electronico'
         }

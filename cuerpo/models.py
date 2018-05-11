@@ -51,6 +51,12 @@ class Logeado(models.Model):
     def __str__(self):
         return self.username
 
+class Recuperacion(models.Model):
+    email = models.EmailField(max_length=254, help_text='Correo electronico')
+
+    def __str__(self):
+        return self.email
+
 #username = request.session.get('USUARIO_LOGEADO')
 
 class HacerCita(models.Model):

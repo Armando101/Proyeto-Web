@@ -9,13 +9,13 @@
         <div class="container">
             <div class="row">
                 <center>
-                    <h3 class="head">Inicia Sesion!</h3>
+                    <h3 class="head">Escribe tu correo electronico</h3>
                 </center>
                 <div class="col s6 offset-s3 white">
                     <form class="post-form" method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button class="btn waves-effect purple accent-3" type="submit">Iniciar Sesion
+                        <button class="btn waves-effect purple accent-3" type="submit">Recuperar Contrasena
                         </button>
                     </form>
                 </div>
@@ -25,25 +25,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s4">
+                <div class="col s4 offset-s3">
+                    <a class="btn waves-effect #d500f9 purple accent-3" type="button" name="action"
+                       href={% url 'login' %}>Inicia Sesion!
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4 offset-s3">
                     <a class="btn waves-effect #d500f9 purple accent-3" type="button" name="action"
                        href={% url 'registro' %}>Registrate!
                     </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12">
-                    <a class="btn waves-effect #d500f9 purple accent-3" type="button" name="action"
-                       href={% url 'recuperar' %}>Olvidaste tu contraseña?
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s3">
-                    <a class="btn waves-effect #d500f9 purple accent-3" type="button" name="action"
-                       href={% url 'cerrar' %}>Cerrar Sesión!
-                    </a>
-                </div>
             </div>
         </div>
     </main>

@@ -4,7 +4,7 @@ from django.utils import timezone
 from datetime import time, datetime
 from django.contrib import messages, sessions
 from cuerpo.models import Post, User, Opiniones, Producto, Barnice, CuidadoCabello, CuidadoPersonal, PerfumesLociones
-from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm, OpinionForm
+from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm, OpinionForm, RecuperarForm
 
 # Create your views here. Ba
 
@@ -55,10 +55,24 @@ def contacto(request):
 def tips(request):
     return render(request, 'cuerpo/tips.html', {})
 
-def recuperarContrasena(request):
-    email = EmailMessage('Recuperacion de contraseña', 'Contraseña: Hola', to=['patobarrero@gmail.com'])
-    email.send()
-    return redirect('login')
+def recuperar(request):
+    if request.method == 'POST':
+        form = RecuperarForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            try:
+                usuario = User.objects.get(email=user.email)
+                passwd = usuario.password1
+                correo = usuario.email
+                email = EmailMessage('Recuperacion de contraseña', 'Contraseña: ' + passwd, to=[correo])
+                email.send()
+                return render(request, 'cuerpo/index.html', {})
+            except User.DoesNotExist:
+                messages.info(request, 'Infromación errónea')
+                redirect('login')
+    else:
+        form = RecuperarForm()
+    return render(request, 'cuerpo/recuperacion.html', {'form': form})
 
 def cerrar(request):
         request.session['USUARIO_LOGEADO'] = ""
