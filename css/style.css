@@ -2,14 +2,15 @@
 	width: 30%;
 }
 
-.tamcard{
-	width: 500px;
-	height: 500px;
-}
 .centrou{
 	text-align: center; 
 }
 
+.tabla{
+
+	width: 200px;
+	height: 150px;
+}
 .justificado{
 	text-align: justify;
 }
@@ -122,4 +123,10 @@ main {
 	font-family: 'Pacifico', cursive;
 	font-size: 150%;
 	color:#5E005C;		
+}
+
+.imgRedonda {
+    width:300px;
+    height:300px;
+    border-radius:150px;
 }
