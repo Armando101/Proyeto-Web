@@ -1,9 +1,38 @@
 SERVICES_CHOICES2 = (
-        ('1', 'Manicura permanente' ),
-        ('2', 'Tratamientos facial'),
-        ('3', 'Depilación corporal'),
-        ('4', 'Manicura convencional'),
-        ('5', 'Depilación de cejas'),
-        ('6', 'Extensiones de pestañas'),
-        ('7', 'Corte de pelo'),
+        ('Manicura permanente', 'Manicura permanente' ),
+        ('Tratamiento facial', 'Tratamiento facial'),
+        ('Depilación corporal', 'Depilación corporal'),
+        ('Manicura convencional', 'Manicura convencional'),
+        ('Depilación de cejas', 'Depilación de cejas'),
+        ('Extensiones de pestañas', 'Extensiones de pestañas'),
+        ('Corte de pelo', 'Corte de pelo'),
+)
+
+PRODUCT_CHOICES = (
+    ('Maquillaje', (
+            ('OjosPestañas', 'Ojos y Pestañas'),
+            ('Bases', 'Bases'),
+            ('Sombras', 'Sombras'),
+            ('Labiales', 'Labiales'),
+        )
+    ),
+    ('Barnices', (
+            ('Flora', 'Flora Mini'),
+            ('Escarcha', 'Escarcha Mini'),
+            ('Fuits', 'Fuits Mini'),
+        )
+    ),
+    ('Cuidado Personal', (
+            ('Personal', 'Cuidado Personal'),
+        )
+    ),
+    ('Cuidado Cabello', (
+            ('Cabello', 'Cuidado del Cabello'),
+        )
+    ),
+    ('Perfumes y Lociones', (
+            ('Perfumes', 'Perfumes'),
+            ('Lociones', 'Lociones'),
+        )
+    ),
 )

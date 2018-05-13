@@ -3,7 +3,7 @@ from django.core.mail import EmailMessage
 from django.utils import timezone
 from datetime import time, datetime
 from django.contrib import messages, sessions
-from cuerpo.models import Post, User, Opiniones, Producto, Barnice, CuidadoCabello, CuidadoPersonal, PerfumesLociones
+from cuerpo.models import Post, User, Opiniones, Producto, Cita
 from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm, OpinionForm, RecuperarForm
 
 # Create your views here. Ba
@@ -15,24 +15,39 @@ def menuproductos(request):
     return render(request, 'cuerpo/menuproductos.html', {})
 
 def cabello(request):
-    cuidadocabellos = CuidadoCabello.objects.all()
-    return render(request, 'cuerpo/cabello.html', {'cuidadocabellos' : cuidadocabellos})
+    productos = Producto.objects.all()
+    return render(request, 'cuerpo/cabello.html', {'cuidadocabellos' : productos})
 
 def perfumes(request):
-    perfumeslocioness = PerfumesLociones.objects.all()
-    return render(request, 'cuerpo/perfumes.html', {'perfumeslocioness' : perfumeslocioness})
+    productos = Producto.objects.all()
+    return render(request, 'cuerpo/perfumes.html', {'productos' : productos})
 
 def cuidado(request):
-    cuidadopersonals = CuidadoPersonal.objects.all()
-    return render(request, 'cuerpo/cuidado.html', {'cuidadopersonals' : cuidadopersonals})
+    productos = Producto.objects.all()
+    return render(request, 'cuerpo/cuidado.html', {'productos' : productos})
 
 def barnices(request):
-    barnices = Barnice.objects.all()
-    return render(request, 'cuerpo/barnices.html', {'barnices' : barnices})
+    productos = Producto.objects.all()
+    return render(request, 'cuerpo/barnices.html', {'productos' : productos})
 
 def maquillaje(request):
     productos = Producto.objects.all()
     return render(request, 'cuerpo/maquillaje.html', {'productos' : productos})
+
+def vercitas(request):
+    usuario = request.session.get('USUARIO_LOGEADO')
+    if not usuario or usuario == "":
+        messages.info(request, 'Inicia sesión')
+        form = CitasForm()
+        return render(request, 'cuerpo/citas.html', {'form': form})
+    else:
+        try:
+            citas = Cita.objects.filter(username=usuario)
+            return render(request, 'cuerpo/vercitas.html', {'citas': citas})
+        except User.DoesNotExist:
+            messages.info(request, 'Información errónea')
+
+
 
 def unete(request):
     return render(request, 'cuerpo/unete.html', {})
@@ -124,7 +139,7 @@ def registro(request):
     return render(request, 'cuerpo/registro.html', {'form': form})
 
 def citas(request):
-    usuario = request.session['USUARIO_LOGEADO']
+    usuario = request.session.get('USUARIO_LOGEADO')
     if not usuario or usuario == "":
         messages.info(request, 'Inicia sesión')
         redirect('login')

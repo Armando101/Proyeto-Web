@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, User, Logeado, HacerCita, Opiniones, Recuperacion
+from .models import Post, User, Logeado, Cita, Opiniones, Recuperacion
 
 class PostFormulario(forms.ModelForm):
     class Meta:
@@ -37,7 +37,7 @@ class LoginForm(forms.ModelForm):
 
 class CitasForm(forms.ModelForm):
     class Meta:
-        model = HacerCita
+        model = Cita
         fields = ['dia', 'hora', 'servicio']
         labels = {
             'dia': 'Dia',
