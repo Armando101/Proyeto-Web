@@ -24,6 +24,9 @@ main {
 	flex: 1 0 auto;
 }
 
+.fondo {
+	color: #aa00ff;
+}
 .fac {
 	width: 100%
 }
