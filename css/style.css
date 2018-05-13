@@ -1,13 +1,26 @@
 .logo {
 	width: 30%;
 }
+.colorcito{
+	color: #76262D;
+	font-family: 'Pacifico'; cursive;
+}
+
+.colorcito2{
+	color: #5A5354;
+	font-family: sans-serif;
+	font-style: italic;
+}
+.colorcitoh{
+	color: #2B66C8;
+	font-family: 'Pacifico'; cursive;
+}
 
 .centrou{
 	text-align: center; 
 }
 
 .tabla{
-
 	width: 200px;
 	height: 150px;
 }
@@ -99,8 +112,10 @@ main {
 }
 
 .trabajo {
-
-    font-family: 'Crete Round', serif;
+    font-family: 'Verdana', italic;
+    font-size: 20px;
+    color: #B02BC8;
+    text-align: center;
 }
 
 .imgtips{
@@ -109,8 +124,6 @@ main {
 }
 
 .subtitulos {
-
-
     font-family: 'Great Vibes', cursive;
 	color: #E01591;
 	text-align: left;
@@ -123,6 +136,12 @@ main {
 	font-family: 'Pacifico', cursive;
 	font-size: 150%;
 	color:#5E005C;		
+}
+
+.tipro3{
+	font-family: 'Pacifico', cursive;
+	font-size: 150%;
+	color:#004681;		
 }
 
 .imgRedonda {

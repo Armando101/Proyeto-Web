@@ -32,4 +32,11 @@ function Ejecuta() {
       bottom: $target.offset().top + $target.outerHeight() - $this.height()
     });
   });
+
+$("#ocultar").click(function(e){        
+  $("#logo").fadeOut();   
+});
+$("#mostrar").click(function(e){        
+  $("#logo").fadeIn();    
+});
         
