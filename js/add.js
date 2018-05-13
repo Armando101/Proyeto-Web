@@ -5,6 +5,9 @@ $(document).ready(function(){
     $('.carousel.carousel-slider').carousel({
     fullWidth: true
 	});
+	 $(document).ready(function(){
+    $('.pushpin').pushpin();
+  });
  });
 
 function Ejecuta() {
@@ -19,3 +22,14 @@ function Ejecuta() {
  	alert("Registro exitoso, Gracias por tu preferencia")
  	document.location.href=index.html;
  }
+
+
+  $('.pushpin-demo-nav').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+  });
+        
