@@ -5,9 +5,6 @@ $(document).ready(function(){
     $('.carousel.carousel-slider').carousel({
     fullWidth: true
 	});
-	 $(document).ready(function(){
-    $('.pushpin').pushpin();
-  });
  });
 
 function Ejecuta() {
