@@ -1,11 +1,17 @@
 SERVICES_CHOICES2 = (
-        ('Manicura permanente', 'Manicura permanente' ),
+        ('Manicura', 'Manicura'),
         ('Tratamiento facial', 'Tratamiento facial'),
-        ('Depilación corporal', 'Depilación corporal'),
+        ('Depilación', 'Depilación'),
         ('Manicura convencional', 'Manicura convencional'),
-        ('Depilación de cejas', 'Depilación de cejas'),
-        ('Extensiones de pestañas', 'Extensiones de pestañas'),
-        ('Corte de pelo', 'Corte de pelo'),
+        ('Extension', 'Extension'),
+        ('Corte de cabello', 'Corte de cabello'),
+        ('Tinte', 'Tinte'),
+        ('Pedicure', 'Pedicure'),
+)
+
+SALTO_CHOICES = (
+        ('1', '1'),
+        ('4', '4'),
 )
 
 PRODUCT_CHOICES = (
@@ -19,7 +25,7 @@ PRODUCT_CHOICES = (
     ('Barnices', (
             ('Flora', 'Flora Mini'),
             ('Escarcha', 'Escarcha Mini'),
-            ('Fuits', 'Fuits Mini'),
+            ('Fruits', 'Fruits Mini'),
         )
     ),
     ('Cuidado Personal', (

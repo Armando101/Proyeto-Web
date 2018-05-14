@@ -9,13 +9,13 @@
         <div class="container">
             <div class="row">
                 <center>
-                    <h3 class="head">Escribe tu correo electronico</h3>
+                    <h2 class="tipro">Escribe tu correo electronico</h2>
                 </center>
                 <div class="col s6 offset-s3 white">
                     <form class="post-form" method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button class="btn waves-effect purple accent-3" type="submit">Recuperar Contrasena
+                        <button class="btn-large waves-effect purple accent-3" type="submit">Recuperar Contrasena
                         </button>
                     </form>
                 </div>

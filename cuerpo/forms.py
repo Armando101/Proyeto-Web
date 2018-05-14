@@ -1,10 +1,5 @@
 from django import forms
-from .models import Post, User, Logeado, Cita, Opiniones, Recuperacion
-
-class PostFormulario(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = ('titulo', 'texto')
+from .models import User, Logeado, Cita, Opiniones, Recuperacion
 
 class SignUpForm(forms.ModelForm):
     class Meta:

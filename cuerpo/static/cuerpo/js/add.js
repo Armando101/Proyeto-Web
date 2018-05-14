@@ -1,9 +1,13 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
  	$('.slider').slider();
- 	$('.carousel').carousel();
     $('.parallax').parallax();
-    $('select').formSelect();
+    $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+	});
+	 $(document).ready(function(){
+    $('.pushpin').pushpin();
+  });
  });
 
 function Ejecuta() {
@@ -18,3 +22,21 @@ function Ejecuta() {
  	alert("Registro exitoso, Gracias por tu preferencia")
  	document.location.href=index.html;
  }
+
+
+  $('.pushpin-demo-nav').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+  });
+
+$("#ocultar").click(function(e){        
+  $("#logo").fadeOut();   
+});
+$("#mostrar").click(function(e){        
+  $("#logo").fadeIn();    
+});
+        

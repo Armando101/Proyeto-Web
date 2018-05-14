@@ -5,33 +5,6 @@ from django.contrib import messages, sessions
 
 # Create your models here. Va
 
-class Post(models.Model):
-    """
-    Modelo para almacenar los posts
-    """
-    autor = models.ForeignKey('auth.User', on_delete= models.CASCADE)
-    titulo = models.CharField(max_length= 200)
-    texto = models.TextField()
-    fechaCreacion = models.DateTimeField(
-        default = timezone.now
-    )
-    fechaPublicacion = models.DateTimeField(
-        blank= True, null = True
-    )
-
-    def publicar(self):
-        """
-        Método para obtener la fecha de publicación
-        cuando se publique algún Post
-        """
-        self.fechaPublicacion = timezone.now()
-        self.save()
-
-    #Método mágico que nos permite castear un objeto a una cadena
-    def __str__(self):
-        return self.titulo
-
-
 class User(models.Model):
     username = models.CharField(max_length=30, help_text='Nombre de usuario', primary_key=True)
     password1 = models.CharField(max_length=30, help_text='Contraseña')
@@ -57,8 +30,6 @@ class Recuperacion(models.Model):
     def __str__(self):
         return self.email
 
-#username = request.session.get('USUARIO_LOGEADO')
-
 class Cita(models.Model):
     username = models.CharField(max_length=30, help_text='Nombre de usuario')
     hora = models.TimeField(help_text="Formato hora:minutos")
@@ -79,7 +50,7 @@ class Opiniones(models.Model):
 
 class Producto(models.Model):
     id = models.AutoField
-    idenfificador = models.IntegerField(default=1, help_text="Procure que cada cuarto elemento tenga un identificador multiplo de 4")
+    idenfificador = models.CharField(max_length=2, choices=SALTO_CHOICES, help_text="4 significa un nuevo renglón de items", default='1', unique=False)
     categoria = models.CharField(max_length=25, choices=PRODUCT_CHOICES, default='1')
     nombre = models.CharField(max_length=120)
     nota = models.CharField(max_length=120)
@@ -88,6 +59,7 @@ class Producto(models.Model):
     peso = models.DecimalField(decimal_places=2, max_digits=5, default=1)
     imagen = models.CharField(max_length=120)
     existencias = models.IntegerField(default=1)
+    #descuento = models.DecimalField(max_digits=2, decimal_places=2, default=)
 
     def __str__(self):
         return  self.categoria + "/" + self.nombre

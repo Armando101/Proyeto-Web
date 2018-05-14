@@ -1,38 +1,85 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import EmailMessage
-from django.utils import timezone
 from datetime import time, datetime
 from django.contrib import messages, sessions
-from cuerpo.models import Post, User, Opiniones, Producto, Cita
-from cuerpo.forms import PostFormulario, SignUpForm, LoginForm, CitasForm, OpinionForm, RecuperarForm
+from cuerpo.models import User, Opiniones, Producto, Cita
+from cuerpo.forms import SignUpForm, LoginForm, CitasForm, OpinionForm, RecuperarForm
 
 # Create your views here. Ba
 
 def index(request):
     return render(request, 'cuerpo/index.html', {})
 
+
+def servicios(request):
+    return render(request, 'cuerpo/servicios.html', {})
+
+
+def manicura(request):
+    return render(request, 'cuerpo/manicura.html', {})
+
+
+def manicura_conv(request):
+    return render(request, 'cuerpo/manicura_convencional.html', {})
+
+
+def tratamiento(request):
+    return render(request, 'cuerpo/tratamiento.html', {})
+
+
+def extensiones(request):
+    return render(request, 'cuerpo/extensiones.html', {})
+
+
+def cortes(request):
+    return render(request, 'cuerpo/cortes.html', {})
+
+
+def tintes(request):
+    return render(request, 'cuerpo/tintes.html', {})
+
+
+def pedicure(request):
+    return render(request, 'cuerpo/pedicure.html', {})
+
+
+def depilaciones(request):
+    return render(request, 'cuerpo/depilaciones.html', {})
+
+
 def menuproductos(request):
     return render(request, 'cuerpo/menuproductos.html', {})
 
+
 def cabello(request):
     productos = Producto.objects.all()
-    return render(request, 'cuerpo/cabello.html', {'cuidadocabellos' : productos})
+    return render(request, 'cuerpo/cabello.html', {'productos' : productos})
+
 
 def perfumes(request):
     productos = Producto.objects.all()
     return render(request, 'cuerpo/perfumes.html', {'productos' : productos})
 
+
+def lociones(request):
+    productos = Producto.objects.all()
+    return render(request, 'cuerpo/lociones.html', {'productos' : productos})
+
+
 def cuidado(request):
     productos = Producto.objects.all()
     return render(request, 'cuerpo/cuidado.html', {'productos' : productos})
+
 
 def barnices(request):
     productos = Producto.objects.all()
     return render(request, 'cuerpo/barnices.html', {'productos' : productos})
 
+
 def maquillaje(request):
     productos = Producto.objects.all()
     return render(request, 'cuerpo/maquillaje.html', {'productos' : productos})
+
 
 def vercitas(request):
     usuario = request.session.get('USUARIO_LOGEADO')
@@ -46,7 +93,6 @@ def vercitas(request):
             return render(request, 'cuerpo/vercitas.html', {'citas': citas})
         except User.DoesNotExist:
             messages.info(request, 'Información errónea')
-
 
 
 def unete(request):
@@ -64,11 +110,14 @@ def opiniones(request):
         form = OpinionForm()
     return render(request, 'cuerpo/opiniones.html', {'form' : form})
 
+
 def contacto(request):
     return render(request, 'cuerpo/contacto.html', {})
 
+
 def tips(request):
     return render(request, 'cuerpo/tips.html', {})
+
 
 def recuperar(request):
     if request.method == 'POST':
@@ -89,10 +138,12 @@ def recuperar(request):
         form = RecuperarForm()
     return render(request, 'cuerpo/recuperacion.html', {'form': form})
 
+
 def cerrar(request):
         request.session['USUARIO_LOGEADO'] = ""
         messages.info(request, 'Se ha cerrado la sesion')
         return redirect('login')
+
 
 def login(request):
     USUARIO_LOGEADO = request.session.get('USUARIO_LOGEADO')
@@ -121,6 +172,7 @@ def login(request):
         form = LoginForm()
     return render(request, 'cuerpo/login.html', {'form': form})
 
+
 def registro(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -137,6 +189,7 @@ def registro(request):
     else:
         form = SignUpForm()
     return render(request, 'cuerpo/registro.html', {'form': form})
+
 
 def citas(request):
     usuario = request.session.get('USUARIO_LOGEADO')
@@ -164,37 +217,3 @@ def citas(request):
     else:
         form = CitasForm()
     return render(request, 'cuerpo/citas.html', {'form': form})
-
-def listadoPosts(request):
-    posts = Post.objects.filter(fechaPublicacion__lte = timezone.now()).order_by('fechaPublicacion')
-    return render(request,'cuerpo/listadoPosts.html',{'posts':posts})
-
-def detalles(request, pk):
-    posts = get_object_or_404(Post, pk = pk)
-    return render(request, 'cuerpo/detalles.html', {'post': posts})
-
-def nuevoPost(request):
-    if request.method == 'POST':
-        form = PostFormulario(request.POST)
-        if  form.is_valid():
-            post = form.save(commit=False)
-            post.autor = request.user
-            post.fechaPublicacion = timezone.now()
-            post.save()
-            return redirect('detalles',pk=post.pk)
-    else:
-        form = PostFormulario()
-    return render(request, 'cuerpo/editar.html',{'form':form})
-
-def modificar(request,pk):
-    post = get_object_or_404(Post,pk=pk)
-    if request.method == 'POST':
-        form = PostFormulario(request.POST,instance=post)
-        if  form.is_valid():
-            post = form.save(commit=False)
-            post.autor = request.user
-            post.save()
-            return redirect('detalles',pk=post.pk)
-    else:
-        form = PostFormulario(instance=post)
-    return render(request, 'cuerpo/editar.html',{'form':form})
