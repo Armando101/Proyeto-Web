@@ -14,4 +14,4 @@ Este proyecto fue realzado por:
 - Machicao Cardoso Raúl Fernando  
 - Rivera Negrete Manuel Armando    
 
-Github Pages: https://armando101.github.io/Proyeto-Web/
+Github Pages: https://armando101.github.io/Style-and-Design/
